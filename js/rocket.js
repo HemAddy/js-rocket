@@ -6,21 +6,22 @@ var changeState=function(state){
 	countdownNumber=10;
 	document.getElementById('countdown').
 	 innerHTML=countdownNumber;
-
+	
 	if(state==2){
 	timer = setInterval(function(){
-		countdownNumber=countdownNumber-1;
+	 countdownNumber=countdownNumber-1;
      document.getElementById('countdown').
 	 innerHTML=countdownNumber;
-	 
+
 	 if(countdownNumber<=0){
 	 	changeState(3);
-	 }
+	 };
 	},500);
-} else if(state==3){
+} else if(state==3){ 
   var success=setTimeout(function(){
   		var randomnumber=Math.random(Math.random()*10);
-  		if(randomnumber>5){
+  		console.log('randomnumber'+randomnumber);
+  		if(randomnumber>=1){
   			changeState(4);
   		}else{
   			changeState(5);
